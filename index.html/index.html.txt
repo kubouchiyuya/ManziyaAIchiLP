@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万寺屋AI CHI - 貴社の未来を拓く、AI人材育成と導入支援</title>
+    <style>
+        /* フォントの読み込み */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+
+        /* カラーパレット: 日本の伝統色と洗練された刀のイメージ */
+        :root {
+            --primary-color: #2c3e50; /* 墨色 (メイン) */
+            --accent-red: #a22041;   /* 紅色 (差し色、決断を促す色) */
+            --accent-gold: #D4AF37;  /* 金色 (アクセント、価値を示す色) */
+            --accent-gold-dark: #bca032; /* 濃い金色 */
+            --accent-gold-bright: #FAD201; /* 明るい金色 */
+            --bg-color: #fdf8ed;      /* 背景色（明るい金色） */
+            --text-dark: #34495e;      /* 濃いテキスト */
+            --text-light: #ffffff;    /* 明るいテキスト */
+            --border-color: #e5e0d4;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0; padding: 0; color: var(--text-dark); background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            width: 90%; max-width: 1000px; margin: 0 auto;
+        }
+        section {
+            padding: 80px 20px;
+        }
+        .section-bordered {
+             border-bottom: 1px solid var(--border-color);
+        }
+        .section-white-bg {
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4 { font-weight: 700; text-align: center; }
+        h1, .logo-main, h2 { font-family: 'Shippori Mincho', serif; }
+        
+        h2 { 
+            font-size: 2.4rem; 
+            margin-bottom: 60px; 
+            color: var(--primary-color); 
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-red);
+        }
+
+        h3 { font-size: 1.6rem; color: var(--primary-color); }
+        h4 { font-size: 1.2rem; color: var(--accent-red); font-weight: 700; text-align: left; }
+        p { line-height: 1.9; font-weight: 400; }
+        .section-subtitle { text-align: center; max-width: 700px; margin: -40px auto 60px auto; }
+        .text-center { text-align: center; }
+
+        /* ヘッダー */
+        .header { background-color: rgba(212, 175, 55, 0.2); backdrop-filter: blur(10px); padding: 15px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .header .nav-container { display: flex; justify-content: flex-start; align-items: center; width: 90%; max-width: 1100px; margin: 0 auto; }
+        .logo { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo-main { font-size: 1.8rem; font-weight: 800; color: var(--accent-red); line-height: 1; }
+        .logo-sub { font-size: 1rem; color: var(--text-dark); margin-top: 4px;}
+        .nav-links { margin-left: auto; white-space: nowrap;}
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; padding-bottom: 5px; border-bottom: 2px solid transparent;}
+        .nav-links a:hover { color: var(--accent-red); border-bottom-color: var(--accent-red);}
+
+        /* ヒーローセクション */
+        .hero { 
+            text-align: center; padding: 100px 20px 80px; 
+        }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 25px; color: var(--primary-color); line-height: 1.5; }
+        .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 40px; }
+        
+        .cta-button { display: inline-block; background-color: var(--accent-red); color: var(--text-light); padding: 18px 50px; text-decoration: none; font-size: 1.2rem; font-weight: 700; border-radius: 4px; transition: background-color 0.3s, transform 0.3s; cursor: pointer; border: none; }
+        .cta-button:hover { background-color: #c0392b; transform: translateY(-3px); }
+
+        /* 課題提起セクション */
+        .problem-list { max-width: 800px; margin: 0 auto; padding: 0; text-align: center; list-style: none; }
+        .problem-item {
+            background-color: #fff; padding: 20px; margin-bottom: 15px; border-radius: 4px;
+            border: 1px solid var(--border-color);
+            font-size: 1.1rem; font-weight: 500;
+        }
+        .problem-item::before {
+            content: '✅';
+            margin-right: 10px;
+            color: var(--accent-red);
+        }
+        
+        .arrow-divider {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .arrow-divider svg {
+            width: 50px;
+            height: 50px;
+            color: var(--accent-gold);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* 緊急性訴求セクション */
+        .urgency-section { background-color: var(--primary-color); color: var(--text-light); }
+        .urgency-section h2 { color: var(--text-light); }
+        .urgency-section h2::after { background-color: var(--accent-gold); }
+        .urgency-box {
+            border: 2px solid var(--accent-gold); padding: 30px; border-radius: 4px;
+            max-width: 800px; margin: 0 auto; text-align: center;
+        }
+        .urgency-box p { font-size: 1.1rem; }
+        .urgency-box strong { color: var(--accent-gold); font-size: 1.5rem; }
+        
+        /* 診断セクション */
+        .diagnosis-intro { text-align: center; max-width: 700px; margin: 0 auto 40px; }
+        .diagnosis-form-container { background-color: #fff; padding: 40px; border-radius: 4px; border: 1px solid var(--border-color); }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label, .checklist-title { display: block; font-weight: 700; margin-bottom: 8px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; box-sizing: border-box; }
+        .checklist-group { grid-column: 1 / -1; margin-top: 20px; }
+        .checklist-item { display: flex; align-items: center; margin-bottom: 10px; background-color: var(--bg-color); padding: 10px; border-radius: 4px; border: 1px solid var(--border-color);}
+        .checklist-item input { margin-right: 10px; }
+        .checklist-item label { font-weight: 500; margin-bottom: 0; }
+        .submit-button { grid-column: 1 / -1; text-align: center; }
+        .submit-button .cta-button { 
+            background: var(--accent-gold-bright); color: var(--primary-color); 
+            border: 2px solid var(--accent-red); padding: 16px 50px;
+            font-family: 'Yuji Syuku', cursive;
+            font-size: 1.4rem;
+        }
+        .submit-button .cta-button:hover { background: #FFC300; }
+        
+        #result-area { display: none; margin-top: 40px; padding: 40px; background-color: var(--primary-color); color: var(--text-light); border-radius: 4px; }
+        #result-area h2, #result-area h3 { color: var(--text-light); }
+        #result-area h3 { text-align:left; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom:10px; }
+        .result-summary { display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; text-align: center; margin: 30px 0; }
+        .result-item { margin: 10px 20px; }
+        .result-item h4 { color: var(--accent-gold); font-size: 1.2rem; margin: 0 0 10px 0; border: none; text-align: center;}
+        .result-item .score { font-size: 4rem; font-weight: 700; }
+        .result-item .unit { font-size: 1.5rem; margin-left: 5px;}
+        .recommendation-card { background-color: rgba(0,0,0,0.1); padding: 20px; border-radius: 4px; }
+        .recommendation-card ul { list-style-type: '✅  '; padding-left: 20px; }
+        .recommendation-card li { margin-bottom: 10px; }
+        
+        /* 共通カードスタイル */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background-color: #fff; padding: 30px; border-radius: 4px; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: box-shadow 0.3s, transform 0.3s; }
+        .card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .card .icon { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-red);}
+        .card h3 { text-align: left; margin-top: 0; margin-bottom: 15px; color: var(--primary-color);}
+        .card p { font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        
+        /* 研修概要セクション */
+        .training-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;}
+        .image-placeholder { width: 100%; height: 250px; background-color: transparent; border: 2px dashed var(--border-color); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--border-color); font-family: 'Shippori Mincho', serif;}
+        .training-phase-box { border-left: 3px solid var(--accent-gold); padding-left: 20px; margin-top: 20px; }
+        .training-phase-box h4 { text-align: left; }
+        .breakthrough-text { text-align: right; width: 100%; color: var(--primary-color); font-size: 1.8rem;}
+        .breakthrough-text span { display: block; }
+        .breakthrough-text .first { text-align: left;}
+
+        /* 助成金セクション */
+        .subsidy-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;}
+        .step-card { padding: 20px; background-color: #fff; border: 1px solid var(--border-color); border-radius: 4px; position: relative;}
+        .step-card h4 { text-align: center; }
+        .step-number { position: absolute; top: -15px; left: -15px; background-color: var(--accent-red); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; border: 2px solid #fff; }
+        .finance-comparison { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px; margin-top: 40px; }
+        .finance-box { border: 2px solid var(--border-color); border-radius: 4px; padding: 20px; width: 100%; max-width: 400px; text-align: center; background: #fff;}
+        .finance-box h4 { text-align: center; }
+
+        /* お客様の声セクション */
+        .testimonial-card { text-align: left; }
+        .testimonial-card footer { margin-top: 15px; font-weight: 700; color: var(--primary-color); }
+
+        /* パッケージ一覧セクション */
+        .package-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; background-color: #fff; }
+        .package-table th, .package-table td { border: 1px solid var(--border-color); padding: 12px 15px; text-align: left; }
+        .package-table th { background-color: var(--bg-color); font-weight: 700; color: var(--primary-color);}
+        .package-table td:first-child { font-weight: 500; width: 40%; }
+        
+        /* サービス一覧セクション */
+        .service-title-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
+        .masanari-char-placeholder { width: 80px; height: 80px; background-color: transparent; border: 2px dashed var(--border-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.8rem; }
+        #services .card h3 { text-align: center; font-size: 1.2rem; }
+        
+        /* 選ばれる理由セクションのレイアウト調整 */
+        #reason .card-grid {
+             grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 768px) {
+            #reason .card-grid, .training-feature-grid, #subsidy-details .card-grid, .finance-comparison {
+                grid-template-columns: 1fr;
+            }
+            .profile-container { flex-direction: column; text-align: center;}
+            .profile-details { text-align: center;}
+            .profile-details h3, .profile-details .name, .profile-details .sub-heading, .profile-details .brand-title {text-align: center;}
+        }
+
+        /* プロフィールセクション */
+        .profile-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: center; text-align: left; }
+        .profile-image-wrapper { flex: 0 0 250px; text-align: center; }
+        .profile-image { width: 250px; height: 250px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 auto; object-fit: cover;}
+        .profile-details { flex: 1; min-width: 300px; }
+        .profile-details .brand-title { font-size: 1.5rem; margin-bottom: 0; text-align: left;}
+        .profile-details .name { font-size:1.8rem; color:var(--accent-red); font-family: 'Shippori Mincho', serif; margin-bottom: 15px; line-height: 1.2; text-align: left;}
+        .profile-details p { margin-bottom: 10px; padding: 0; }
+        .profile-details .sub-heading { font-weight: 700; color: var(--primary-color); margin-top: 20px; }
+        .profile-details ul { list-style: none; padding: 0; }
+        .profile-details ul li { background-color: #fff; padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 4px; display: inline-block; margin: 3px; font-size: 0.9rem;}
+        .ai-tools-list {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            font-size: 0.9rem;
+            list-style: none;
+            padding: 0;
+        }
+        .ai-tools-list li {
+            padding: 2px 0;
+        }
+
+
+        /* フッター */
+        .footer { 
+            background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 60px 20px; 
+            position: relative; overflow: hidden;
+        }
+        .footer .container { position: relative; z-index: 1; }
+        .footer h2 { color: #fff; }
+        .footer h2::after { background-color: var(--accent-gold); }
+        .footer-form { max-width: 600px; margin: 40px auto 0; text-align: left; background-color: rgba(44, 62, 80, 0.7); padding: 30px; border-radius: 8px;}
+        .footer-form .form-group { margin-bottom: 15px; }
+        .footer-form .form-group input, .footer-form .form-group textarea { background-color: rgba(255,255,255,0.1); border: 1px solid var(--accent-gold); color: #fff; width: 100%; padding: 12px; box-sizing: border-box; border-radius: 4px;}
+        .footer-form .form-group textarea { resize: vertical; }
+        .footer-form .form-group input::placeholder, .footer-form .form-group textarea::placeholder { color: rgba(255,255,255,0.7); }
+        .footer-form .cta-button { background-color: var(--accent-gold); color: var(--primary-color); }
+        .social-links { margin: 30px 0; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;}
+        .social-links a { color: var(--text-light); text-decoration: none; font-size: 1.5rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px;}
+        .social-links a:hover { color: var(--accent-gold); }
+        .social-links svg { width: 24px; height: 24px; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-main">万寺屋AI CHI</span>
+                <span class="logo-sub">（煌 create JAPAN)</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#reason">選ばれる理由</a>
+                <a href="#packages">AIパッケージ</a>
+                <a href="#services">提供サービス</a>
+                <a href="#profile">代表者紹介</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero section-bordered">
+            <h1>A I を「わかる」から「使える」へ。<br>貴社の未来を拓く、本当のDXがここにある。</h1>
+            <p>
+                「ツールを導入して終わり」ではありません。私たちが目指すのは、AIを使いこなす人材を育て、<br>
+                貴社の業務効率、生産性、そして企業価値そのものを、根本から引き上げることです。
+            </p>
+        </section>
+
+        <!-- 課題提起セクション -->
+        <section id="problems" class="section-white-bg">
+            <div class="container text-center">
+                <h2>このような課題はございませんか？</h2>
+                <ul class="problem-list">
+                    <li class="problem-item">AIを導入したいが、何から始めるべきか分からない</li>
+                    <li class="problem-item">AIに興味はあるが、自社でどう使えるかイメージが湧かない</li>
+                    <li class="problem-item">AIツールを導入したが、現場で全く活用されていない</li>
+                    <li class="problem-item">ツールの導入だけでなく、AIを使いこなせる人材を育てたい</li>
+                </ul>
+                <div class="arrow-divider">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.293l-6.146-6.147a.5.5 0 0 1 .708-.708L12 15.879l5.438-5.438a.5.5 0 0 1 .707.707L12 17.293z"/><path d="M12 11.293l-6.146-6.147a.5.5 0 0 1 .708-.708L12 9.879l5.438-5.438a.5.5 0 1 1 .707.707L12 11.293z"/></svg>
+                </div>
+                 <a href="#diagnosis" class="cta-button" style="background: var(--accent-gold-bright); color: var(--primary-color);">AI活用度を診断へ</a>
+            </div>
+        </section>
+
+        <!-- 緊急性訴求セクション -->
+        <section class="urgency-section section-bordered">
+            <div class="container">
+                <div class="text-center">
+                     <h2>なぜ「今」、AI導入を急ぐべきなのか？</h2>
+                </div>
+                <div class="urgency-box">
+                    <p>国が推進している制度『AIを導入するうえで有効に活用できる助成金制度』<br>これは、<strong>2027年度まで</strong>です。</p>
+                    <p>そう、残り1年9ヶ月。<strong>2期もありません。</strong></p>
+                    <p>でも、今ならまだ今年と来年つかえます！！<br>リスクを最小限に抑え、企業の未来と人材に絶大な投資ができるこの好機を逃す手はありません。<br><strong>“AI導入の絶好機”</strong>は、まさに今なのです。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI活用度診断 -->
+        <section id="diagnosis" class="section-bordered">
+            <div class="container">
+                <div class="text-center">
+                    <h2>AI活用度診断</h2>
+                    <div class="diagnosis-intro">
+                        <p>まずはメタ把握してみましょう。<br>以下の内容にご回答いただくことで、貴社のAI活用ポテンシャルが見えてきます。</p>
+                    </div>
+                </div>
+                <div class="diagnosis-form-container">
+                    <form id="diagnosis-form">
+                        <div class="form-grid">
+                            <div class="form-group"><label for="company-name">会社名</label><input type="text" id="company-name" required></div>
+                            <div class="form-group"><label for="name">お名前</label><input type="text" id="name" required></div>
+                            <div class="form-group"><label for="position">役職</label><input type="text" id="position"></div>
+                            <div class="form-group"><label for="contact-field">連絡先</label><input type="text" id="contact-field" required></div>
+                            <div class="form-group" style="grid-column: 1 / -1;"><label for="industry">業種</label>
+                                <select id="industry" required>
+                                    <option value="">選択してください</option>
+                                    <option value="建設業">建設業</option>
+                                    <option value="介護・福祉">介護・福祉</option>
+                                    <option value="サービス業">サービス業</option>
+                                    <option value="役場・自治体">役場・自治体</option>
+                                    <option value="運送業">運送業</option>
+                                    <option value="医療系">医療系</option>
+                                    <option value="士業">士業</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                            <div class="checklist-group">
+                                <p class="checklist-title">貴社の課題に当てはまるものにチェックしてください</p>
+                                <div class="checklist-item"><input type="checkbox" id="q1"><label for="q1">定型的なデータ入力や転記作業に時間を費やしている。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q2"><label for="q2">会議の議事録作成や要約が負担になっている。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q3"><label for="q3">過去の資料や社内規定を探すのに時間がかかる。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q4"><label for="q4">顧客からの定型的な問い合わせに人が対応している。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q5"><label for="q5">SNSやブログの更新が滞りがちだ。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q6"><label for="q6">営業日報の作成や報告が負担になっている。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q7"><label for="q7">請求書や経費精算の処理に手作業が多い。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q8"><label for="q8">新人研修やマニュアル更新に手間がかかっている。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q9"><label for="q9">複数のシステム間のデータ連携を手作業で行っている。</label></div>
+                                <div class="checklist-item"><input type="checkbox" id="q10"><label for="q10">市場調査や情報収集に多くの時間がかかっている。</label></div>
+                            </div>
+                            <div class="submit-button"><button type="submit" class="cta-button">診 断 す る</button></div>
+                        </div>
+                    </form>
+                </div>
+                <div id="result-area">
+                    <h2>診断結果</h2>
+                    <div class="result-summary">
+                        <div class="result-item"><h4>総合評価</h4><span class="score" id="result-rank"></span></div>
+                        <div class="result-item"><h4>AI研修導入 推奨度</h4><span class="score" id="result-percentage">0</span><span class="unit">%</span></div>
+                    </div>
+                    <div class="recommendation-card">
+                      <h3>あなたの業種でAIができること</h3>
+                      <p id="industry-recommendation-title">選択された業種に応じて、AIは以下のような業務を自動化・効率化できる可能性があります。</p>
+                      <ul id="recommendation-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 無料セミナー案内 -->
+        <section id="seminar-cta" class="section-white-bg section-bordered">
+            <div class="container text-center">
+                <h2>AI活用セミナーへ、特別にご招待いたします！！</h2>
+                 <div class="card" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                     <p>本オンラインセミナーでは、AI企業の現役創業社長（東証上場6580）が、AI活用の最前線を解説します。<br>このセミナーでは、以下の内容で開催します。</p>
+                     <ul style="list-style: none; padding-left: 0;">
+                         <li class="problem-item">① どんな業務でAI活用が進んでいるのか</li>
+                         <li class="problem-item">② 新規テレアポもAIで実現（デモ音声公開）</li>
+                         <li class="problem-item">③ マネージメントも全てAIで（AIエージェントDifyを例に）※前回大好評</li>
+                         <li class="problem-item">④ 質疑応答</li>
+                     </ul>
+                     <p class="text-center">現在までに<strong>1200社</strong>が参加、満足度7点満点中6点、<strong>97.5%</strong>の方が「参加してよかった」とご回答くださいました😊</p>
+                     <div class="text-center" style="margin-top: 20px;">
+                        <a href="https://x.gd/ynYS9" target="_blank" class="cta-button">今すぐ無料セミナーを予約</a>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- AI研修の概要 -->
+        <section id="training-overview" class="section-bordered">
+            <div class="container">
+                <div class="text-center">
+                    <h2>私たちが提供するAI研修とは</h2>
+                </div>
+                <div class="training-feature-grid">
+                    <div>
+                        <h3 class="breakthrough-text" style="font-size: 1.8rem;">最高品質の教材 × 実践的なノウハウ</h3>
+                        <p>研修教材は、東証一部上場企業『㈱ライトアップ』と、日本トップクラスのAI専門家『いけとも先生』が共同開発。ChatGPTの基本的な使い方から、Excelマクロの自動作成、API連携といった高度な活用まで、段階的に学ぶことができます。<br>e-learning形式なので、いつでも・どこでも・何度でも、ご自身のペースで学習を進めることが可能です。</p>
+                    </div>
+                    <div>
+                        <div class="image-placeholder">研修教材イメージ</div>
+                    </div>
+                </div>
+                 <div class="training-feature-grid" style="margin-top: 40px;">
+                    <div>
+                         <div class="image-placeholder">AI導入の3フェーズ</div>
+                    </div>
+                    <div>
+                        <h3 class="breakthrough-text" style="font-size: 1.8rem;">
+                            <span class="first">「わかる」で終わらない、</span>
+                            <span>その先の「ブレイクスルー」へ</span>
+                        </h3>
+                        <div class="training-phase-box">
+                            <p>企業のAI導入には、誰もが通る3つのフェーズがあります。</p>
+                            <p><strong>第一フェーズ：</strong>AIへの抵抗をなくし、まずは気軽に触れてもらうこと。この教材の目的は、まずここにあります。</p>
+                            <p><strong>第二フェーズ：</strong>業務で積極的にAIを使うようになること。多くの企業がこの「活用の壁」にぶつかります。私たちは、この壁を乗り越えるための運用と仕組み作りを、徹底的に支援します。</p>
+                            <p>そして、この壁を超えた時、AIを完全に使いこなし、ビジネスにブレイクスルーが訪れます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 競合優位性セクション -->
+        <section id="reason" class="section-white-bg section-bordered">
+             <div class="container text-center">
+                <h2>私たちが選ばれる理由</h2>
+                 <p class="section-subtitle">人材育成と経営視点を掛け合わせた、唯一無二の価値を提供します。</p>
+                <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="card reason-card">
+                        <h4>理由１</h4><h3>最高品質の研修教材</h3>
+                        <p>東証一部上場企業『㈱ライトアップ』と、チャンネル登録者数17万人超のAI専門家『いけとも先生』が共同開発。いつでもどこでも、最新かつ最高品質のAI知識を学べます。</p>
+                    </div>
+                     <div class="card reason-card">
+                        <h4>理由２</h4><h3>破格の助成金申請支援</h3>
+                        <p>通常150万円が相場の助成金申請支援を、業界の常識を覆す価格で提供。条件次第では着手金・計画申請代行が無料で、成功報酬は入金額のわずか5%のみ。</p>
+                    </div>
+                     <div class="card reason-card">
+                        <h4>理由３</h4><h3>独自の限定コンサル</h3>
+                        <p>研修導入企業様には、昨年度9600社が活用した、実質的な費用負担をさらに軽減する特別なノウハウを直接コンサル。貴社の未来への投資を、全力で後押しします。</p>
+                    </div>
+                     <div class="card reason-card">
+                        <h4>理由４</h4><h3>現場密着の伴走支援</h3>
+                        <p>AI講師、導入支援コンサルタントとして、貴社に深く密着。理念に掲げる「社会循環の改善」と「地方創生」の実現に向け、誠心誠意、貴社だけの最適解を導き出します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 助成金詳細・お客様の声 -->
+        <section id="subsidy-details" class="section-bordered">
+            <div class="container">
+                <div class="text-center">
+                    <h2>助成金を活用した、賢い未来への投資</h2>
+                </div>
+                <div class="finance-comparison">
+                     <div class="finance-box">
+                         <h4>今期1000万円の利益が出た場合…</h4>
+                         <div class="image-placeholder" style="height: 200px;">資金繰り比較図</div>
+                         <p style="text-align: left; font-size: 0.9rem; margin-top: 20px;">今期はリスキリング助成金で【偶然にも】上記のような有利な資金繰り（節税効果）が適用されます。来期も同様のことをしても400万円をずらしているだけとなり節税効果はありません。浮いた資金を、来期の事業展開を加速させるための投資に充当しませんか？</p>
+                     </div>
+                     <div class="finance-box" style="text-align: left;">
+                         <h4>受講までのステップ</h4>
+                         <ol>
+                             <li><strong>受講者の選定:</strong> 雇用保険加入者が対象です。</li>
+                             <li><strong>書類の準備:</strong> 法律上の労務書類と研修申込書をご提出いただきます。</li>
+                             <li><strong>計画申請:</strong> 国へ事前の計画申請を行います。</li>
+                             <li><strong>研修受講:</strong> 計画申請の約1ヶ月後から受講開始です。</li>
+                         </ol>
+                         <h4>受給の主な条件</h4>
+                         <ul style="font-size: 0.9rem; padding-left: 20px;">
+                             <li>雇用保険加入者を1名以上雇用していること</li>
+                             <li>従業員の保険加入義務に違反していないこと</li>
+                             <li>半年以内に会社都合解雇をしていないこと</li>
+                             <li>残業代未払いなどの労務違反がないこと</li>
+                         </ul>
+                     </div>
+                </div>
+                <div class="text-center">
+                    <h3 style="margin-top: 60px;">導入企業様の声</h3>
+                </div>
+                 <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                     <div class="card testimonial-card">
+                         <p>「研修を通じて業務効率化への意識が向上し、仕様書の作成が1時間から30分に短縮。効果を実感しています！」</p>
+                         <footer>ー 印刷業界（500名）</footer>
+                     </div>
+                     <div class="card testimonial-card">
+                         <p>「ファイル整理を自動化するスクリプトを学び、4時間かかっていた業務が2時間に。開発工数を大幅に削減できました！」</p>
+                         <footer>ー 情報通信業界（2000名）</footer>
+                     </div>
+                      <div class="card testimonial-card">
+                         <p>「研修をきっかけにAI関連の本を読む従業員も現れ、自己啓発の良い機会に。今後もぜひ受講したいです。」</p>
+                         <footer>ー 製造業界（100名）</footer>
+                     </div>
+                     <div class="card testimonial-card">
+                         <p>「従業員から新たな気づきや私生活でも役立てているという声が上がり、非常に好評でした。今後も積極的に受講したいです。」</p>
+                         <footer>ー 建設業界（50名）</footer>
+                     </div>
+                 </div>
+                 <div class="text-center" style="margin-top: 60px;">
+                    <h3>AI研修導入をご検討の企業様！！</h3>
+                    <p>是非、AI活用セミナーをご視聴してください。</p>
+                    <a href="https://x.gd/ynYS9" target="_blank" class="cta-button">セミナーの予約はこちら</a>
+                 </div>
+            </div>
+        </section>
+
+        <!-- AIパッケージ一覧 -->
+        <section id="packages" class="section-white-bg section-bordered">
+            <div class="container text-center">
+                <h2>販売中のAIパッケージ</h2>
+                <p class="section-subtitle">手が足りない経営者様や少人数のチームが「明日から使える」をコンセプトに、設定不要ですぐに実用可能なパッケージをご用意しました。</p>
+                <h4>経営者・役員向け</h4>
+                <table class="package-table"><thead><tr><th>パッケージ名</th><th>想定ターゲット</th></tr></thead><tbody><tr><td>経営サポートAI「社長の右腕」</td><td>社長・経営者（新規事業開発／提携戦略を重視）</td></tr><tr><td>経営サポートAI「社長の左腕」</td><td>経営者・管理部門（補助金・助成金に関心）</td></tr><tr><td>AI副社長</td><td>ビジョン浸透を重視する中小企業社長／教育・営業ツールを求める経営者</td></tr><tr><td>社長のコビト</td><td>多忙な中小企業社長・一人社長</td></tr><tr><td>MVP自動表彰AI</td><td>社員エンゲージメントを高めたい経営層</td></tr><tr><td>日報ラジオ自動放送AI</td><td>部下の日報確認が後回しになっている多忙な経営者</td></tr></tbody></table>
+                <h4>マーケティング・営業・採用担当向け</h4>
+                <table class="package-table"><thead><tr><th>パッケージ名</th><th>想定ターゲット</th></tr></thead><tbody><tr><td>WordPress・SNS自動投稿</td><td>Web集客・広報に取り組む中小〜中堅企業の担当者</td></tr><tr><td>営業リスト自動作成</td><td>新規開拓に苦戦する営業チーム</td></tr><tr><td>indeed自動出稿AI</td><td>求人コストを抑えたい中小企業</td></tr></tbody></table>
+                <h4>管理・事務部門向け</h4>
+                <table class="package-table"><thead><tr><th>パッケージ名</th><th>想定ターゲット</th></tr></thead><tbody><tr><td>問い合わせ自動対応AI</td><td>カスタマーサポート部門（対応遅延に課題）</td></tr><tr><td>請求書自動管理AI</td><td>経理部門・請求業務を担当するバックオフィス</td></tr><tr><td>採用面接フォローAI</td><td>評価コメント作成や選考管理が煩雑な採用チーム</td></tr><tr><td>総務担当コピーAI</td><td>総務部の業務問い合わせ対応を軽減したい会社</td></tr></tbody></table>
+            </div>
+        </section>
+        
+        <!-- 提供サービス一覧 -->
+        <section id="services" class="section-bordered">
+            <div class="container text-center">
+                <div class="service-title-container">
+                    <h2>万寺屋AI CHIの提供サービス</h2>
+                    <div class="masanari-char-placeholder">MASA<br>NARI</div>
+                </div>
+                <p class="section-subtitle">貴社の課題や規模に合わせて、最適なソリューションを組み合わせ、誠心誠意ご提案します。</p>
+                <div class="card-grid">
+                     <div class="card"><div class="icon">🎓</div><h3>AI研修・講師</h3><p>AIの基本から実践まで、貴社のレベルに合わせた研修を提供。全社員のAIリテラシーを向上させ、組織全体のDXを推進します。</p></div>
+                    <div class="card"><div class="icon">🤝</div><h3>AI顧問・導入支援</h3><p>ツールの選定から現場への導入、活用方法の定着まで、貴社のAI活用を伴走支援する顧問サービスです。</p></div>
+                    <div class="card"><div class="icon">🤖</div><h3 style="font-size: 1.2rem;">業務自動化・ツール構築</h3><p>RPAやノーコードツールを駆使し、貴社独自の業務フローに合わせた自動化ツールを構築します。</p></div>
+                    <div class="card"><div class="icon">🎨</div><h3>クリエイティブ事業</h3><p>HP・LP作成、ロゴデザイン、キャラクター作成、さらには作曲まで。AIを活用し、貴社のブランド価値を高めます。</p></div>
+                     <div class="card"><div class="icon">📱</div><h3 style="font-size: 1.2rem;">公式LINE構築・SNS運用</h3><p>プロラインツール等を活用した公式LINEの構築や、各種SNSの効果的な運用をコンサルティングします。</p></div>
+                    <div class="card"><div class="icon">👕</div><h3>オリジナル作品作成</h3><p>Tシャツやノベルティグッズなど、貴社だけのオリジナル作品を作成。企業のブランディングを支援します。</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代表者プロフィール -->
+        <section id="profile" class="section-white-bg">
+            <div class="container text-center">
+                <h2>万寺屋 AI CHI × 煌 Create JAPAN</h2>
+                 <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image-placeholder"></div>
+                    </div>
+                    <div class="profile-details">
+                        <p class="name" style="text-align:left; margin-top: 0;">窪内 優也 (KUBOUCHI YUYA)</p>
+                        <p>1993年青森県生まれ、岩手県育ち。現在は高知県で妻、息子、娘の４人家族。</p>
+                        <p>高校卒業後、陸上自衛隊へ。日本唯一のパラシュート部隊「第一空挺団」に所属。</p>
+                        <p>個人事業主『建設業の施工管理（現場監督）、AI関連事業、オリジナル作品作成』<br>
+                        <span style="padding-left: 2em;">地方創生事業（土佐AI塾）準備中。</span></p>
+                        
+                        <h4 class="sub-heading">保有資格</h4>
+                        <ul><li>生成AIパスポート</li><li>ジェネラリスト</li><li>生成AIプロンプトエンジニア</li><li>施工管理技士</li></ul>
+
+                        <h4 class="sub-heading">使用AIツール</h4>
+                        <ul class="ai-tools-list">
+                            <li>汎用チャットAI (ChatGPT, Gemini, Claude)</li>
+                            <li>コーディング支援 (GitHub Copilot, Cline, Cursor)</li>
+                            <li>アプリ開発 (Lovable)</li>
+                            <li>検索・リサーチ (Felo, Mapify)</li>
+                            <li>エージェント開発 (Dify, Flowise AI)</li>
+                            <li>PDF・ドキュメント解析 (ChatPDF, NotebookLM)</li>
+                            <li>タスク実行エージェント (Runner H, Manus AI, Proxy)</li>
+                            <li>業務マニュアル生成 (Scribe)</li>
+                            <li>Web／UIデザイン (V0, Same.dev, PrismUI)</li>
+                            <li>プレゼン・スライド (Gamma, Canva, GenSpark)</li>
+                            <li>データ分析 (Abacus AI)</li>
+                            <li>決算・財務資料 (Lily AI)</li>
+                            <li>学習プラットフォーム (YouLearn)</li>
+                            <li>画像生成・編集 (Diffy, Photopea, CLIP STUDIO)</li>
+                            <li>動画生成・編集 (Vrew, CapCut, HeyGen)</li>
+                            <li>自動化・連携 (Zapier, Make, UiPath)</li>
+                            <li>ナレッジ管理 (Notion AI, Obsidian)</li>
+                            <li>音声生成 (VoxTalker, Fish Audio, Chatterbox)</li>
+                        </ul>
+
+                        <h4 class="sub-heading">趣味・特技</h4>
+                        <ul><li>野球(15年)</li><li>空手(三段)</li><li>柔剣道(三段)</li><li>合気道(初段)</li><li>居合(初段)</li><li>クラヴマガ(Lv4)</li><li>キャンプ</li><li>アウトドア全般</li><li>DIY</li><li>家庭菜園</li><li>神社仏閣巡り</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>AI導入に関するご相談、お見積もりのご依頼など、お気軽にご連絡ください。</p>
+            <form class="footer-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- IMPORTANT: Replace with your actual Web3Forms access key -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> 
+                <div class="form-group">
+                    <input type="text" name="会社名" placeholder="会社名" required>
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="業種" placeholder="業種" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="お名前" placeholder="お名前" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="役職" placeholder="役職">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="メールアドレス" placeholder="メールアドレス" required>
+                </div>
+                 <div class="form-group">
+                    <textarea name="お問い合わせ内容" rows="6" placeholder="会社のお困りごとやこんな属人的なものを自動化してみたいやこんなことはできるの？など何でもお問い合わせください。" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="cta-button">送信する</button>
+                </div>
+            </form>
+            <div class="social-links">
+                <a href="https://x.com/Masa_AIcreater" target="_blank" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H4.68l4.713 6.231L12.623 2.25h2.022L18.244 2.25zM16.92 19.98h1.63L6.96 4.02H5.16l11.76 15.96z"/></svg><span>X</span></a>
+                <a href="https://note.com/samurai93xrp" target="_blank" title="note"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9.5c.83 0 1.5-.67 1.5-1.5S10.83 7.5 10 7.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM10.21 16h-.99l-1.9-4.82h.05c.1.48.15.93.15 1.35v3.47h-.73V11.2h1.15l1.78 4.4.04.08c.03-.03.07-.06.1-.08l1.78-4.4h1.15v4.8h-.73v-3.47c0-.42.06-.87.16-1.35h.05L13.79 16h-1z"/></svg><span>note</span></a>
+                <a href="https://www.instagram.com/kubouchi.ai_creater/?hl=ja" target="_blank" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg><span>Instagram</span></a>
+                <a href="https://www.threads.net/@kubouchi.ai_creater" target="_blank" title="Threads"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.038,5.165q.276,0,.437.168a.561.561,0,0,1,.161.446,1.44,1.44,0,0,1-.05.385.787.787,0,0,1-.137.287.978.978,0,0,1-.23.212.87.87,0,0,1-.308.118,1.4,1.4,0,0,1-.269-.02.438.438,0,0,0-.2-.072.76.76,0,0,0-.317-.067H10.59V10.2h1.613a.654.654,0,0,0,.262-.05.626.626,0,0,0,.243-.161,1.18,1.18,0,0,0,.168-.262.771.771,0,0,0,.06-.324.71.71,0,0,0-.2-.55,1.066,1.066,0,0,0-.687-.2H9.378V5.165Zm-1.748,8.274a1.01,1.01,0,0,1-.237.219,1.08,1.08,0,0,1-.324.154q-.168.05-.385.05a1.86,1.86,0,0,1-.58-.088,1.26,1.26,0,0,1-.482-.262,1.2,1.2,0,0,1-.317-.41,1.52,1.52,0,0,1-.111-.53q0-.363.154-.626a.545.545,0,0,1,.445-.255.438.438,0,0,1,.3.088.487.487,0,0,1,.182.255.85.85,0,0,0,.081.255.7.7,0,0,0,.255.2,1.05,1.05,0,0,0,.363.06,1.2,1.2,0,0,0,.392-.067.751.751,0,0,0,.3-.189.923.923,0,0,0,.182-.3,1.3,1.3,0,0,0,.06-.445.96.96,0,0,0-.11-.453,1.1,1.1,0,0,0-.3-.356,1.44,1.44,0,0,0-.468-.243,2.5,2.5,0,0,0-.6-.088H5.852v5.33h5.457a2.5,2.5,0,0,0,.737-.1,1.76,1.76,0,0,0,.6-.31,1.47,1.47,0,0,0,.43-.49,1.7,1.7,0,0,0,.154-.7.8.8,0,0,0-.1-.418,1.08,1.08,0,0,0-.28-.356,1.7,1.7,0,0,0-.43-.262,2.5,2.5,0,0,0-.566-.1ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm-1.7,16.5H5.852a.25.25,0,0,1-.25-.25V5.415a.25.25,0,0,1,.25-.25H12.9a3.03,3.03,0,0,1,.84.125,2.06,2.06,0,0,1,.7.385,1.6,1.6,0,0,1,.453.6,1.9,1.9,0,0,1,.161.765.91.91,0,0,1-.219.645,1.6,1.6,0,0,1-.652.482,1.46,1.46,0,0,0-.4.212,1.2,1.2,0,0,0-.243.324.96.96,0,0,0-.088.41,1.11,1.11,0,0,1,.3.826,1.86,1.86,0,0,1-.3,1.05,2.4,2.4,0,0,1-.8, .765,3.3,3.3,0,0,1-1.2.3Z"/></svg><span>Threads</span></a>
+            </div>
+            <!-- 管理者ログイン機能は、サーバーサイドの仕組みが必要です。これはフロントエンドのみのデモです。 -->
+            <a href="#admin" style="display:block; margin-top:20px; font-size:0.9rem; color: rgba(255,255,255,0.5); text-decoration: none;">&copy; 2025 万寺屋AI CHI Inc. All Rights Reserved.</a>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('diagnosis-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let score = 0;
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => { if (cb.checked) score++; });
+        let rank = score >= 9 ? 'S' : score >= 7 ? 'A' : score >= 5 ? 'B' : score >= 3 ? 'C' : 'D';
+        let percentage = score * 10;
+        const industry = document.getElementById('industry').value;
+        let recommendations = [];
+        const commonRecs = ["【経理・総務】請求書や領収書のデータを自動で読み取り、会計ソフトへ入力する。","【人事】社内規定やFAQを学習したチャットボットが、従業員からの問い合わせに24時間対応する。","【全般】会議の音声をAIが自動で文字起こしし、議事録の要約を作成する。"];
+        switch (industry) {
+            case '建設業': recommendations = ["【社長・常務】各現場の進捗状況や勤怠データをリアルタイムでダッシュボードに可視化する。","【営業】入札情報や膨大な契約書類から、重要なリスク項目をAIが自動でチェックする。","【現場監督】現場で撮影した写真から、AIが自動で報告書の下書きを作成する。"]; break;
+            case '介護・福祉': recommendations = ["【施設長】スタッフの希望を元に、AIが公平なシフト表を自動で作成し、連絡も自動化する。","【ケアマネージャー】ケア記録や日誌を音声入力からAIが自動でテキスト化・要約し、書類作成時間を大幅に削減する。","【事務】利用者家族への定型的な連絡事項やリマインドを、AIが自動で送信する。"]; break;
+            case 'サービス業': recommendations = ["【店長・経営者】売上や来客データをAIが分析し、需要予測や最適なシフト作成を支援する。","【マーケティング】SNSの口コミをAIが収集・分析し、顧客満足度の向上や新メニュー開発のヒントを得る。","【接客】Webサイトに設置したチャットボットが、予約受付やよくある質問に24時間対応する。"]; break;
+            case '役場・自治体': recommendations = ["【首長・幹部】膨大な議事録や陳情書をAIが要約し、迅速な意思決定をサポートする。","【広報】地域のイベント情報や災害情報などを、複数のSNSへ同時に自動発信する。","【住民課】住民からのよくある質問に、AIチャットボットが24時間365日対応し、職員の負担を軽減する。"]; break;
+            case '運送業': recommendations = ["【経営者】天候や交通情報を加味して、AIが最適な配送ルートと配車計画を自動で作成する。","【営業】過去の配送データから、AIが運賃の見積もりを自動で算出する。","【運行管理者】ドライバーの業務日報をスマホの音声入力から自動作成し、管理者の確認作業を効率化する。"]; break;
+            case '医療系': recommendations = ["【院長】問診票やカルテの入力をAIが音声認識で代行し、医師が患者と向き合う時間を確保する。","【看護師】複雑な業務マニュアルをAIに学習させ、必要な情報をチャットで瞬時に引き出せるようにする。","【事務】予約受付やリマインド連絡をAIが自動化し、電話対応の負担を軽減する。"]; break;
+            case '士業': recommendations = ["【代表】過去の判例や膨大な法務・税務文書をAIが瞬時に検索・要約し、調査時間を短縮する。","【弁護士・税理士】契約書や財務書類に潜むリスクをAIが自動でチェックし、ダブルチェックを効率化する。","【事務】新規顧客からの定型的なヒアリングをAIが代行し、相談内容を自動で整理する。"]; break;
+            default: recommendations = ["【営業】Webサイトからの問い合わせ内容をAIが分析し、見込み度を判定して担当者に通知する。","【マーケティング】競合他社のWebサイトやSNSの更新情報をAIが自動で収集・要約する。","【経営者】会社の売上や経費データをAIが分析し、経営状況をグラフで分かりやすく可視化する。"];
+        }
+        const recommendationList = document.getElementById('recommendation-list');
+        recommendationList.innerHTML = '';
+        [...recommendations, ...commonRecs].forEach(text => {
+            const li = document.createElement('li');
+            li.textContent = text;
+            recommendationList.appendChild(li);
+        });
+        document.getElementById('result-rank').textContent = rank;
+        document.getElementById('result-percentage').textContent = percentage;
+        const resultArea = document.getElementById('result-area');
+        resultArea.style.display = 'block';
+        resultArea.scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
+</body>
+</html>
+
