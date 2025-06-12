@@ -58,7 +58,8 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
             height: 3px;
             background-color: var(--accent-red);
@@ -200,7 +201,7 @@
         
         /* サービス一覧セクション */
         .service-title-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
-        .masanari-char-placeholder { width: 80px; height: 80px; background-color: transparent; border: 2px dashed var(--border-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.8rem; }
+        .masanari-char { height: 80px; width: 80px; object-fit: contain; }
         #services .card h3 { text-align: center; font-size: 1.2rem; }
         
         /* 選ばれる理由セクションのレイアウト調整 */
@@ -218,7 +219,7 @@
 
         /* プロフィールセクション */
         .profile-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: center; text-align: left; }
-        .profile-image-wrapper { flex: 0 0 250px; text-align: center; }
+        .profile-image-wrapper { flex-shrink: 0; width: 250px; text-align: center; }
         .profile-image { width: 250px; height: 250px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 auto; object-fit: cover;}
         .profile-details { flex: 1; min-width: 300px; }
         .profile-details .brand-title { font-size: 1.5rem; margin-bottom: 0; text-align: left;}
@@ -676,4 +677,3 @@
     </script>
 </body>
 </html>
-
