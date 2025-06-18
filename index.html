@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>                                      
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>万寺屋AI CHI - 貴社の未来を拓く、AI人材育成と導入支援</title>
-    <style>                                      
+    <style>
         /* フォントの読み込み */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
 
         /* カラーパレット: 日本の伝統色と洗練された刀のイメージ */
-        :root {                                      
+        :root {
             --primary-color: #2c3e50; /* 墨色 (メイン) */
             --accent-red: #a22041;   /* 紅色 (差し色、決断を促す色) */
             --accent-gold: #D4AF37;  /* 金色 (アクセント、価値を示す色) */
@@ -20,33 +20,33 @@
             --bg-color: #fdf8ed;      /* 背景色（明るい金色） */
             --text-dark: #34495e;      /* 濃いテキスト */
             --text-light: #ffffff;    /* 明るいテキスト */
-            --border-color: #e5e0d4;                                                        
+            --border-color: #e5e0d4;
         }
 
         html { scroll-behavior: smooth; }
-        body {                                                        
+        body {
             font-family: 'Noto Sans JP', sans-serif;
             margin: 0; padding: 0; color: var(--text-dark); background-color: var(--bg-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        .container {                                                        
+        .container {
             width: 90%; max-width: 1000px; margin: 0 auto;
         }
-        section {                                                  
+        section {
             padding: 80px 20px;
         }
-        .section-bordered {                                                  
+        .section-bordered {
              border-bottom: 1px solid var(--border-color);
         }
-        .section-white-bg {                                                  
-            background-color: #fff;                                                  
+        .section-white-bg {
+            background-color: #fff;
         }
 
         h1, h2, h3, h4 { font-weight: 700; text-align: center; }
         h1, .logo-main, h2 { font-family: 'Shippori Mincho', serif; }
         
-        h2 {                                                     
+        h2 { 
             font-size: 2.4rem; 
             margin-bottom: 60px; 
             color: var(--primary-color); 
@@ -54,7 +54,7 @@
             position: relative;
             padding-bottom: 15px;
         }
-        h2::after {  
+        h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -71,17 +71,17 @@
         .text-center { text-align: center; }
 
         /* ヘッダー */
-        .header { background-color: rgba(212, 175, 55, 0.2); backdrop-filter: blur(10px); padding: 15px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .header { background-color: rgba(253, 248, 237, 0.9); backdrop-filter: blur(10px); padding: 15px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
         .header .nav-container { display: flex; justify-content: flex-start; align-items: center; width: 90%; max-width: 1100px; margin: 0 auto; }
         .logo { display: flex; flex-direction: column; align-items: flex-start; }
-        .logo-main { font-size: 1.8rem; font-weight: 800; color: var(--accent-red); line-height: 1; }
-        .logo-sub { font-size: 1rem; color: var(--text-dark); margin-top: 4px;}
+        .logo-main { font-size: 2.2rem; font-weight: 800; color: var(--accent-red); line-height: 1; }
+        .logo-sub { font-size: 1.2rem; color: var(--text-dark); margin-top: 4px;}
         .nav-links { margin-left: auto; white-space: nowrap;}
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; padding-bottom: 5px; border-bottom: 2px solid transparent;}
         .nav-links a:hover { color: var(--accent-red); border-bottom-color: var(--accent-red);}
 
         /* ヒーローセクション */
-        .hero {   
+        .hero { 
             text-align: center; padding: 100px 20px 80px; 
         }
         .hero h1 { font-size: 2.8rem; margin-bottom: 25px; color: var(--primary-color); line-height: 1.5; }
@@ -92,7 +92,7 @@
 
         /* 課題提起セクション */
         .problem-list { max-width: 800px; margin: 0 auto; padding: 0; text-align: center; list-style: none; }
-        .problem-item {  
+        .problem-item {
             background-color: #fff; padding: 20px; margin-bottom: 15px; border-radius: 4px;
             border: 1px solid var(--border-color);
             font-size: 1.1rem; font-weight: 500;
@@ -127,7 +127,7 @@
             border: 2px solid var(--accent-gold); padding: 30px; border-radius: 4px;
             max-width: 800px; margin: 0 auto; text-align: center;
         }
-        .urgency-box p { font-size: 1.1rem; }      
+        .urgency-box p { font-size: 1.1rem; }
         .urgency-box strong { color: var(--accent-gold); font-size: 1.5rem; }
         
         /* 診断セクション */
@@ -227,7 +227,7 @@
         .profile-details .sub-heading { font-weight: 700; color: var(--primary-color); margin-top: 20px; }
         .profile-details ul { list-style: none; padding: 0; }
         .profile-details ul li { background-color: #fff; padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 4px; display: inline-block; margin: 3px; font-size: 0.9rem;}
-        .ai-tools-list {                                                            
+        .ai-tools-list {
             columns: 2;
             -webkit-columns: 2;
             -moz-columns: 2;
@@ -235,13 +235,13 @@
             list-style: none;
             padding: 0;
         }
-        .ai-tools-list li {                                        
+        .ai-tools-list li {
             padding: 2px 0;
         }
 
 
         /* フッター */
-        .footer {         
+        .footer { 
             background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 60px 20px; 
             position: relative; overflow: hidden;
         }
@@ -258,35 +258,35 @@
         .social-links a { color: var(--text-light); text-decoration: none; font-size: 1.5rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px;}
         .social-links a:hover { color: var(--accent-gold); }
         .social-links svg { width: 24px; height: 24px; }
-    </style>  
-</head>  
-<body>  
+    </style>
+</head>
+<body>
 
     <header class="header">
         <div class="nav-container">
             <div class="logo">
                 <span class="logo-main">万寺屋AI CHI</span>
-                <span class="logo-sub">（煌 Create JAPAN)</span>
-            </div>  
+                <span class="logo-sub">（煌 create JAPAN)</span>
+            </div>
             <nav class="nav-links">
                 <a href="#reason">選ばれる理由</a>
                 <a href="#packages">AIパッケージ</a>
                 <a href="#services">提供サービス</a>
                 <a href="#profile">代表者紹介</a>
                 <a href="#contact">お問い合わせ</a>
-            </nav>  
-        </div>  
-    </header>  
+            </nav>
+        </div>
+    </header>
 
-    <main>  
+    <main>
         <!-- ヒーローセクション -->
         <section class="hero section-bordered">
             <h1>A I を「わかる」から「使える」へ。<br>貴社の未来を拓く、本当のDXがここにある。</h1>
-            <p>  
+            <p>
                 「ツールを導入して終わり」ではありません。私たちが目指すのは、AIを使いこなす人材を育て、<br>
                 貴社の業務効率、生産性、そして企業価値そのものを、根本から引き上げることです。
-            </p>  
-        </section>    
+            </p>
+        </section>
 
         <!-- 課題提起セクション -->
         <section id="problems" class="section-white-bg">
@@ -297,28 +297,27 @@
                     <li class="problem-item">AIに興味はあるが、自社でどう使えるかイメージが湧かない</li>
                     <li class="problem-item">AIツールを導入したが、現場で全く活用されていない</li>
                     <li class="problem-item">ツールの導入だけでなく、AIを使いこなせる人材を育てたい</li>
-                </ul>    
+                </ul>
                 <div class="arrow-divider">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.293l-6.146-6.147a.5.5 0 0 1 .708-.708L12 15.879l5.438-5.438a.5.5 0 0 1 .707.707L12 17.293z"/><path d="M12 11.293l-6.146-6.147a.5.5 0 0 1 .708-.708L12 9.879l5.438-5.438a.5.5 0 1 1 .707.707L12 11.293z"/></svg>
-                </div>    
+                </div>
                  <a href="#diagnosis" class="cta-button" style="background: var(--accent-gold-bright); color: var(--primary-color);">AI活用度を診断へ</a>
-            </div>    
-        </section>    
+            </div>
+        </section>
 
         <!-- 緊急性訴求セクション -->
         <section class="urgency-section section-bordered">
             <div class="container">
                 <div class="text-center">
                      <h2>なぜ「今」、AI導入を急ぐべきなのか？</h2>
-                </div>  
+                </div>
                 <div class="urgency-box">
                     <p>国が推進している制度『AIを導入するうえで有効に活用できる助成金制度』<br>これは、<strong>2027年度まで</strong>です。</p>
-                    <p><s>そう、残り1年9ヶ月。</s><strong><s>2期ありません。</s></strong></p>
-                    <p>導入が遅れているので2年延長!!<strong>あと、4期になりました！！</strong></p>
-                    <p>4年あるからこそ、まずは試験的に導入を推奨します！！<br>定着には時間がかかります！！企業の未来と人材に絶大な投資ができるこの好機を逃す手はありません。<br><strong>“AI導入の絶好機”</strong>は、まさに今なのです。</p>
-                </div>    
-            </div>    
-        </section>    
+                    <p>そう、残り1年9ヶ月。<strong>2期もありません。</strong></p>
+                    <p>でも、今ならまだ今年と来年つかえます！！<br>リスクを最小限に抑え、企業の未来と人材に絶大な投資ができるこの好機を逃す手はありません。<br><strong>“AI導入の絶好機”</strong>は、まさに今なのです。</p>
+                </div>
+            </div>
+        </section>
         
         <!-- AI活用度診断 -->
         <section id="diagnosis" class="section-bordered">
@@ -327,8 +326,8 @@
                     <h2>AI活用度診断</h2>
                     <div class="diagnosis-intro">
                         <p>まずはメタ把握してみましょう。<br>以下の内容にご回答いただくことで、貴社のAI活用ポテンシャルが見えてきます。</p>
-                    </div>    
-                </div>    
+                    </div>
+                </div>
                 <div class="diagnosis-form-container">
                     <form id="diagnosis-form">
                         <div class="form-grid">
@@ -347,8 +346,8 @@
                                     <option value="医療系">医療系</option>
                                     <option value="士業">士業</option>
                                     <option value="その他">その他</option>
-                                </select>  
-                            </div>  
+                                </select>
+                            </div>
                             <div class="checklist-group">
                                 <p class="checklist-title">貴社の課題に当てはまるものにチェックしてください</p>
                                 <div class="checklist-item"><input type="checkbox" id="q1"><label for="q1">定型的なデータ入力や転記作業に時間を費やしている。</label></div>
@@ -405,7 +404,7 @@
         <section id="training-overview" class="section-bordered">
             <div class="container">
                 <div class="text-center">
-                    <h2>ご提案するAI研修とは</h2>
+                    <h2>私たちが提供するAI研修とは</h2>
                 </div>
                 <div class="training-feature-grid">
                     <div>
@@ -413,7 +412,7 @@
                         <p>研修教材は、東証一部上場企業『㈱ライトアップ』と、日本トップクラスのAI専門家『いけとも先生』が共同開発。ChatGPTの基本的な使い方から、Excelマクロの自動作成、API連携といった高度な活用まで、段階的に学ぶことができます。<br>e-learning形式なので、いつでも・どこでも・何度でも、ご自身のペースで学習を進めることが可能です。</p>
                     </div>
                     <div>
-                        <img src="training-material.png" alt="研修教材イメージ" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <div class="image-placeholder">研修教材イメージ</div>
                     </div>
                 </div>
                  <div class="training-feature-grid" style="margin-top: 40px;">
@@ -451,8 +450,8 @@
                         <p>通常150万円が相場の助成金申請支援を、業界の常識を覆す価格で提供。条件次第では着手金・計画申請代行が無料で、成功報酬は入金額のわずか5%のみ。</p>
                     </div>
                      <div class="card reason-card">
-                        <h4>理由３</h4><h3>弊社からのスペシャル特典</h3>
-                        <p>研修導入企業様には、全国180万社中12000社が活用した、実質的な費用負担をさらに軽減する国の制度を最大限活用するノウハウを直接コンサル。貴社の未来への投資を、全力で後押しします。</p>
+                        <h4>理由３</h4><h3>独自の限定コンサル</h3>
+                        <p>研修導入企業様には、昨年度9600社が活用した、実質的な費用負担をさらに軽減する特別なノウハウを直接コンサル。貴社の未来への投資を、全力で後押しします。</p>
                     </div>
                      <div class="card reason-card">
                         <h4>理由４</h4><h3>現場密着の伴走支援</h3>
@@ -531,7 +530,6 @@
                 <table class="package-table"><thead><tr><th>パッケージ名</th><th>想定ターゲット</th></tr></thead><tbody><tr><td>WordPress・SNS自動投稿</td><td>Web集客・広報に取り組む中小〜中堅企業の担当者</td></tr><tr><td>営業リスト自動作成</td><td>新規開拓に苦戦する営業チーム</td></tr><tr><td>indeed自動出稿AI</td><td>求人コストを抑えたい中小企業</td></tr></tbody></table>
                 <h4>管理・事務部門向け</h4>
                 <table class="package-table"><thead><tr><th>パッケージ名</th><th>想定ターゲット</th></tr></thead><tbody><tr><td>問い合わせ自動対応AI</td><td>カスタマーサポート部門（対応遅延に課題）</td></tr><tr><td>請求書自動管理AI</td><td>経理部門・請求業務を担当するバックオフィス</td></tr><tr><td>採用面接フォローAI</td><td>評価コメント作成や選考管理が煩雑な採用チーム</td></tr><tr><td>総務担当コピーAI</td><td>総務部の業務問い合わせ対応を軽減したい会社</td></tr></tbody></table>
-                <p class="section-subtitle">その他、ご依頼いただいたツール開発や作成も承っております！！</p>
             </div>
         </section>
         
@@ -540,11 +538,7 @@
             <div class="container text-center">
                 <div class="service-title-container">
                     <h2>万寺屋AI CHIの提供サービス</h2>
-                   <div class="masanari-char-placeholder" style="text-align: center;">
-                   <img src="masakun.JPEG" alt="MASAKUN" style="width: 160px; border-radius: 8px;">
-
-
-</div>
+                    <div class="masanari-char-placeholder">MASA<br>NARI</div>
                 </div>
                 <p class="section-subtitle">貴社の課題や規模に合わせて、最適なソリューションを組み合わせ、誠心誠意ご提案します。</p>
                 <div class="card-grid">
@@ -569,14 +563,6 @@
                          <div class="profile-image-placeholder"></div>
                     </div>
                     <div class="profile-details">
-　　　　　　　　　　　  <!-- 左カラム（丸と四角の画像） -->
-  <div class="profile-left-image-block">
-    <img src="img/profile.png" alt="プロフィール画像" class="profile-circle-img">
-    <img src="img/subimage.png" alt="補足画像" class="profile-rect-img">
-  </div>
-
-  <!-- 右カラム（元の内容そのまま） -->
-  <div class="profile-details">　　　　
                         <p class="name" style="text-align:left; margin-top: 0;">窪内 優也 (KUBOUCHI YUYA)</p>
                         <p>1993年青森県生まれ、岩手県育ち。現在は高知県で妻、息子、娘の４人家族。</p>
                         <p>高校卒業後、陸上自衛隊へ。日本唯一のパラシュート部隊「第一空挺団」に所属。</p>
@@ -616,59 +602,45 @@
         </section>
     </main>
 
-   <footer id="contact" class="footer">
-  <div class="container">
-    <h2>お問い合わせ</h2>
-    <p>AI導入に関するご相談、お見積もりのご依頼など、お気軽にご連絡ください。</p>
-
-    <form class="footer-form" action="https://formspree.io/f/xzzgvpkk" method="POST">
-      <div class="form-group">
-        <input type="text" name="会社名" placeholder="会社名" required>
-      </div>
-      <div class="form-group">
-        <input type="text" name="業種" placeholder="業種" required>
-      </div>
-      <div class="form-group">
-        <input type="text" name="お名前" placeholder="お名前" required>
-      </div>
-      <div class="form-group">
-        <input type="text" name="役職" placeholder="役職">
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="メールアドレス" required>
-      </div>
-      <div class="form-group">
-        <textarea name="message" rows="6" placeholder="会社のお困りごとやこんな属人的な業務を自動化したい！こんなことはできるの？など何でもお問い合わせください。" required></textarea>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="cta-button">送信する</button>
-      </div>
-    </form>
-
-    <div class="social-links">
-      <a href="https://x.com/Masa_AIcreater" target="_blank" title="X">
-        <!-- Xアイコン -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26…"/></svg><span>X</span>
-      </a>
-      <a href="https://note.com/samurai93xrp" target="_blank" title="note">
-        <!-- noteアイコン -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 2C6.48 2 2 6.48…"/></svg><span>note</span>
-      </a>
-      <a href="https://www.instagram.com/kubouchi.ai_creater/?hl=ja" target="_blank" title="Instagram">
-        <!-- Instagramアイコン -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7.8,2H16.2C19.4,2…"/></svg><span>Instagram</span>
-      </a>
-      <a href="https://www.threads.net/@kubouchi.ai_creater" target="_blank" title="Threads">
-        <!-- Threadsアイコン -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12,2A10,10,0…"/></svg><span>Threads</span>
-      </a>
-    </div>
-
-    <a href="#admin" style="display:block; margin-top:20px; font-size:0.9rem; color:rgba(255,255,255,0.5); text-decoration:none;">
-      &copy; 2025 万寺屋AI CHI Inc. All Rights Reserved.
-    </a>
-  </div>
-</footer>
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>AI導入に関するご相談、お見積もりのご依頼など、お気軽にご連絡ください。</p>
+            <form class="footer-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- IMPORTANT: Replace with your actual Web3Forms access key -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> 
+                <div class="form-group">
+                    <input type="text" name="会社名" placeholder="会社名" required>
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="業種" placeholder="業種" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="お名前" placeholder="お名前" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="役職" placeholder="役職">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="メールアドレス" placeholder="メールアドレス" required>
+                </div>
+                 <div class="form-group">
+                    <textarea name="お問い合わせ内容" rows="6" placeholder="会社のお困りごとやこんな属人的なものを自動化してみたいやこんなことはできるの？など何でもお問い合わせください。" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="cta-button">送信する</button>
+                </div>
+            </form>
+            <div class="social-links">
+                <a href="https://x.com/Masa_AIcreater" target="_blank" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H4.68l4.713 6.231L12.623 2.25h2.022L18.244 2.25zM16.92 19.98h1.63L6.96 4.02H5.16l11.76 15.96z"/></svg><span>X</span></a>
+                <a href="https://note.com/samurai93xrp" target="_blank" title="note"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9.5c.83 0 1.5-.67 1.5-1.5S10.83 7.5 10 7.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM10.21 16h-.99l-1.9-4.82h.05c.1.48.15.93.15 1.35v3.47h-.73V11.2h1.15l1.78 4.4.04.08c.03-.03.07-.06.1-.08l1.78-4.4h1.15v4.8h-.73v-3.47c0-.42.06-.87.16-1.35h.05L13.79 16h-1z"/></svg><span>note</span></a>
+                <a href="https://www.instagram.com/kubouchi.ai_creater/?hl=ja" target="_blank" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg><span>Instagram</span></a>
+                <a href="https://www.threads.net/@kubouchi.ai_creater" target="_blank" title="Threads"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.038,5.165q.276,0,.437.168a.561.561,0,0,1,.161.446,1.44,1.44,0,0,1-.05.385.787.787,0,0,1-.137.287.978.978,0,0,1-.23.212.87.87,0,0,1-.308.118,1.4,1.4,0,0,1-.269-.02.438.438,0,0,0-.2-.072.76.76,0,0,0-.317-.067H10.59V10.2h1.613a.654.654,0,0,0,.262-.05.626.626,0,0,0,.243-.161,1.18,1.18,0,0,0,.168-.262.771.771,0,0,0,.06-.324.71.71,0,0,0-.2-.55,1.066,1.066,0,0,0-.687-.2H9.378V5.165Zm-1.748,8.274a1.01,1.01,0,0,1-.237.219,1.08,1.08,0,0,1-.324.154q-.168.05-.385.05a1.86,1.86,0,0,1-.58-.088,1.26,1.26,0,0,1-.482-.262,1.2,1.2,0,0,1-.317-.41,1.52,1.52,0,0,1-.111-.53q0-.363.154-.626a.545.545,0,0,1,.445-.255.438.438,0,0,1,.3.088.487.487,0,0,1,.182.255.85.85,0,0,0,.081.255.7.7,0,0,0,.255.2,1.05,1.05,0,0,0,.363.06,1.2,1.2,0,0,0,.392-.067.751.751,0,0,0,.3-.189.923.923,0,0,0,.182-.3,1.3,1.3,0,0,0,.06-.445.96.96,0,0,0-.11-.453,1.1,1.1,0,0,0-.3-.356,1.44,1.44,0,0,0-.468-.243,2.5,2.5,0,0,0-.6-.088H5.852v5.33h5.457a2.5,2.5,0,0,0,.737-.1,1.76,1.76,0,0,0,.6-.31,1.47,1.47,0,0,0,.43-.49,1.7,1.7,0,0,0,.154-.7.8.8,0,0,0-.1-.418,1.08,1.08,0,0,0-.28-.356,1.7,1.7,0,0,0-.43-.262,2.5,2.5,0,0,0-.566-.1ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm-1.7,16.5H5.852a.25.25,0,0,1-.25-.25V5.415a.25.25,0,0,1,.25-.25H12.9a3.03,3.03,0,0,1,.84.125,2.06,2.06,0,0,1,.7.385,1.6,1.6,0,0,1,.453.6,1.9,1.9,0,0,1,.161.765.91.91,0,0,1-.219.645,1.6,1.6,0,0,1-.652.482,1.46,1.46,0,0,0-.4.212,1.2,1.2,0,0,0-.243.324.96.96,0,0,0-.088.41,1.11,1.11,0,0,1,.3.826,1.86,1.86,0,0,1-.3,1.05,2.4,2.4,0,0,1-.8, .765,3.3,3.3,0,0,1-1.2.3Z"/></svg><span>Threads</span></a>
+            </div>
+            <!-- 管理者ログイン機能は、サーバーサイドの仕組みが必要です。これはフロントエンドのみのデモです。 -->
+            <a href="#admin" style="display:block; margin-top:20px; font-size:0.9rem; color: rgba(255,255,255,0.5); text-decoration: none;">&copy; 2025 万寺屋AI CHI Inc. All Rights Reserved.</a>
+        </div>
+    </footer>
 
     <script>
     document.getElementById('diagnosis-form').addEventListener('submit', function(event) {
