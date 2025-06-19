@@ -533,29 +533,66 @@
             </div>
         </section>
         
-        <!-- 提供サービス一覧 -->
+        <!-- 提供サービス一覧（修正済み） -->
 <section id="services" class="section-bordered">
   <div class="container text-center">
-    <div class="service-title-container" style="display: flex; flex-direction: column; align-items: center;">
-      <h2 style="margin-bottom: 16px;">万寺屋AI CHIの提供サービス</h2>
-      <img src="masakun.JPEG" alt="MASAKUN" style="width: 160px; margin-bottom: 20px;">
+    <div class="service-title-flex">
+      <h2>万寺屋AI CHIの提供サービス</h2>
+      <img src="masakun.JPEG" alt="MASAKUN" style="width: 160px; height: auto; border-radius: 8px;">
     </div>
 
-    <p class="section-subtitle" style="margin-top: 0;">
+    <p class="section-subtitle">
       貴社の課題や規模に合わせて、最適なソリューションを組み合わせ、誠心誠意ご提案します。
     </p>
 
     <div class="card-grid">
-      <!-- ここは変更なし -->
       <div class="card"><div class="icon">🎓</div><h3>AI研修・講師</h3><p>AIの基本から実践まで、貴社のレベルに合わせた研修を提供。全社員のAIリテラシーを向上させ、組織全体のDXを推進します。</p></div>
       <div class="card"><div class="icon">🤝</div><h3>AI顧問・導入支援</h3><p>ツールの選定から現場への導入、活用方法の定着まで、貴社のAI活用を伴走支援する顧問サービスです。</p></div>
-      <div class="card"><div class="icon">🤖</div><h3 style="font-size: 1.2rem;">業務自動化・ツール構築</h3><p>RPAやノーコードツールを駆使し、貴社独自の業務フローに合わせた自動化ツールを構築します。</p></div>
+      <div class="card"><div class="icon">🤖</div><h3>業務自動化・ツール構築</h3><p>RPAやノーコードツールを駆使し、貴社独自の業務フローに合わせた自動化ツールを構築します。</p></div>
       <div class="card"><div class="icon">🎨</div><h3>クリエイティブ事業</h3><p>HP・LP作成、ロゴデザイン、キャラクター作成、さらには作曲まで。AIを活用し、貴社のブランド価値を高めます。</p></div>
-      <div class="card"><div class="icon">📱</div><h3 style="font-size: 1.2rem;">公式LINE構築・SNS運用</h3><p>プロラインツール等を活用した公式LINEの構築や、各種SNSの効果的な運用をコンサルティングします。</p></div>
+      <div class="card"><div class="icon">📱</div><h3>公式LINE構築・SNS運用</h3><p>プロラインツール等を活用した公式LINEの構築や、各種SNSの効果的な運用をコンサルティングします。</p></div>
       <div class="card"><div class="icon">👕</div><h3>オリジナル作品作成</h3><p>Tシャツやノベルティグッズなど、貴社だけのオリジナル作品を作成。企業のブランディングを支援します。</p></div>
     </div>
   </div>
 </section>
+
+<!-- CSS（<style>に追加） -->
+<style>
+  .service-title-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .service-title-flex h2 {
+    margin: 0;
+    white-space: nowrap;
+    color: var(--primary-color);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.4rem;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .service-title-flex h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-red);
+  }
+
+  .service-title-flex img {
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+</style>
+
 
 
         <!-- 代表者プロフィール -->
