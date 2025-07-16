@@ -359,7 +359,7 @@
                                 <div class="checklist-item"><input type="checkbox" id="q7"><label for="q7">請求書や経費精算の処理に手作業が多い。</label></div>
                                 <div class="checklist-item"><input type="checkbox" id="q8"><label for="q8">新人研修やマニュアル更新に手間がかかっている。</label></div>
                                 <div class="checklist-item"><input type="checkbox" id="q9"><label for="q9">複数のシステム間のデータ連携を手作業で行っている。</label></div>
-                                <div class="checklist-item"><input type="checkbox" id="q10"><label for="q10">市場調査や情報収集に多くの時間がかかっている。</label></div>
+                                <div class="checklisAI導入の3フェーズt-item"><input type="checkbox" id="q10"><label for="q10">市場調査や情報収集に多くの時間がかかっている。</label></div>
                             </div>
                             <div class="submit-button"><button type="submit" class="cta-button">診 断 す る</button></div>
                         </div>
@@ -412,12 +412,12 @@
                         <p>研修教材は、東証一部上場企業『㈱ライトアップ』と、日本トップクラスのAI専門家『いけとも先生』が共同開発。ChatGPTの基本的な使い方から、Excelマクロの自動作成、API連携といった高度な活用まで、段階的に学ぶことができます。<br>e-learning形式なので、いつでも・どこでも・何度でも、ご自身のペースで学習を進めることが可能です。</p>
                     </div>
                     <div>
-                        <div class="image-placeholder">研修教材イメージ</div>
+                        <img class= "image-placeholder" src="./ikeda.png" alt="AI研修教材イメージ">
                     </div>
                 </div>
                  <div class="training-feature-grid" style="margin-top: 40px;">
                     <div>
-                         <div class="image-placeholder">AI導入の3フェーズ</div>
+                         <img class="image-placeholder" src="./fezu0619.png" alt="AI導入の3フェーズ">
                     </div>
                     <div>
                         <h3 class="breakthrough-text" style="font-size: 1.8rem;">
@@ -470,7 +470,7 @@
                 <div class="finance-comparison">
                      <div class="finance-box">
                          <h4>今期1000万円の利益が出た場合…</h4>
-                         <div class="image-placeholder" style="height: 200px;">資金繰り比較図</div>
+                          <img src="./zyoseikin.png" class="image-placeholder" alt="資金繰り比較図">
                          <p style="text-align: left; font-size: 0.9rem; margin-top: 20px;">今期はリスキリング助成金で【偶然にも】上記のような有利な資金繰り（節税効果）が適用されます。来期も同様のことをしても400万円をずらしているだけとなり節税効果はありません。浮いた資金を、来期の事業展開を加速させるための投資に充当しませんか？</p>
                      </div>
                      <div class="finance-box" style="text-align: left;">
@@ -564,7 +564,8 @@
     justify-content: center;
     gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* 20pxから40pxに増加 */
+    min-height: 120px; /* 最小高さを設定 */
   }
 
   .service-title-flex h2 {
@@ -575,6 +576,8 @@
     font-size: 2.4rem;
     position: relative;
     padding-bottom: 15px;
+    flex: 1; /* フレックスアイテムとして設定 */
+    min-width: 300px; /* 最小幅を設定 */
   }
 
   .service-title-flex h2::after {
@@ -590,6 +593,27 @@
   .service-title-flex img {
     flex-shrink: 0;
     border-radius: 8px;
+    max-width: 160px; /* 最大幅を設定 */
+    height: auto;
+    object-fit: contain; /* アスペクト比を保持 */
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .service-title-flex {
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    
+    .service-title-flex h2 {
+      min-width: auto;
+      font-size: 2rem;
+    }
+    
+    .service-title-flex img {
+      max-width: 120px;
+    }
   }
 </style>
 
@@ -603,6 +627,7 @@
                 </div>
                  <div class="profile-container">
                     <div class="profile-image-wrapper">
+                        <!-- TODO 個人画像入れる-->>
                          <div class="profile-image-placeholder"></div>
                     </div>
                     <div class="profile-details">
